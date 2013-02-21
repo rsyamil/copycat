@@ -1,3 +1,4 @@
 C:\Users\rsyamil\Desktop\KinectGame\KinectGame\KinectGameContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\rsyamil\Documents\GitHub\eecs481\KinectGame\KinectGame\KinectGameContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\jason\Documents\GitHub\eecs481\KinectGame\KinectGame\KinectGameContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGameContent\obj\x86\Debug\ResolveAssemblyReference.cache

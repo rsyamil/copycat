@@ -92,6 +92,7 @@ namespace KinectGame
             draw.SetKinectStatus(skeletonTracker.getKinectStatus());
             draw.SetVideo(this.graphics, skeletonTracker.getVideoWidth(), skeletonTracker.getVideoHeight());
             draw.SetData(skeletonTracker.getVideoColor());
+            draw.SetClippedStatus(navigate.CheckClippedEdges(skeletonTracker.getSkeleton(MAIN_PLAYER)));
 
             // TODO: Add your update logic here
             base.Update(gameTime);

@@ -34,7 +34,7 @@ namespace KinectGame
 
         public NavigationClass()
         {
-            buttonsInfoList.Add(new Button
+            //buttonsInfoList.Add(new Button
         }
 
         public Clipped CheckClippedEdges(Skeleton skeleton)

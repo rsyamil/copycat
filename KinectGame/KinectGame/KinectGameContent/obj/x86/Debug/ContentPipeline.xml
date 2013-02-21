@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\rsyamil\Documents\GitHub\eecs481\KinectGame\KinectGame\KinectGame\bin\x86\Debug\Content\Level-1\Background-1.xnb</Output>
+      <Output>C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGame\bin\x86\Debug\Content\Level-1\Background-1.xnb</Output>
       <Time>2013-02-14T01:27:05.1563278-05:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\rsyamil\Documents\GitHub\eecs481\KinectGame\KinectGame\KinectGame\bin\x86\Debug\Content\Level-0\pinkbird.xnb</Output>
+      <Output>C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGame\bin\x86\Debug\Content\Level-0\pinkbird.xnb</Output>
       <Time>2013-02-14T01:27:05.1523276-05:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\rsyamil\Documents\GitHub\eecs481\KinectGame\KinectGame\KinectGame\bin\x86\Debug\Content\Level-1\James.xnb</Output>
+      <Output>C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGame\bin\x86\Debug\Content\Level-1\James.xnb</Output>
       <Time>2013-02-14T01:27:05.1573279-05:00</Time>
     </Item>
     <Item>
@@ -34,7 +34,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\rsyamil\Documents\GitHub\eecs481\KinectGame\KinectGame\KinectGame\bin\x86\Debug\Content\Alert.xnb</Output>
+      <Output>C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGame\bin\x86\Debug\Content\Alert.xnb</Output>
       <Time>2013-02-14T01:27:05.1493274-05:00</Time>
     </Item>
     <Item>
@@ -43,7 +43,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\rsyamil\Documents\GitHub\eecs481\KinectGame\KinectGame\KinectGame\bin\x86\Debug\Content\Score.xnb</Output>
+      <Output>C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGame\bin\x86\Debug\Content\Score.xnb</Output>
       <Time>2013-02-14T01:27:05.159328-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -52,10 +52,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\rsyamil\Documents\GitHub\eecs481\KinectGame\KinectGame\KinectGameContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\rsyamil\Documents\GitHub\eecs481\KinectGame\KinectGame\KinectGame\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\rsyamil\Documents\GitHub\eecs481\KinectGame\KinectGame\KinectGameContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\rsyamil\Documents\GitHub\eecs481\KinectGame\KinectGame\KinectGame\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGameContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGame\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGameContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGame\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

@@ -9,3 +9,14 @@ C:\Users\rsyamil\Documents\GitHub\eecs481\KinectGame\KinectGame\KinectGame\obj\x
 C:\Users\rsyamil\Documents\GitHub\eecs481\KinectGame\KinectGame\KinectGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\rsyamil\Documents\GitHub\eecs481\KinectGame\KinectGame\KinectGame\obj\x86\Debug\KinectGame.exe
 C:\Users\rsyamil\Documents\GitHub\eecs481\KinectGame\KinectGame\KinectGame\obj\x86\Debug\KinectGame.pdb
+C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGame\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGame\obj\x86\Debug\KinectGame.exe
+C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGame\bin\x86\Debug\Content\Level-1\Background-1.xnb
+C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGame\bin\x86\Debug\Content\Level-0\pinkbird.xnb
+C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGame\bin\x86\Debug\Content\Level-1\James.xnb
+C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGame\bin\x86\Debug\Content\Alert.xnb
+C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGame\bin\x86\Debug\Content\Score.xnb
+C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGame\bin\x86\Debug\KinectGame.exe
+C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGame\bin\x86\Debug\KinectGame.pdb
+C:\Users\rsyamil\Documents\GitHub\CopyCat\KinectGame\KinectGame\KinectGame\obj\x86\Debug\KinectGame.pdb
