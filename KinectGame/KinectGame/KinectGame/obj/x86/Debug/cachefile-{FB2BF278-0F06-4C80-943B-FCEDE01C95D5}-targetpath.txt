@@ -1,0 +1,5 @@
+Content\Level-1\Background-1.xnb
+Content\Level-0\pinkbird.xnb
+Content\Level-1\James.xnb
+Content\Alert.xnb
+Content\Score.xnb

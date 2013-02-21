@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinectGame", "KinectGame\KinectGame\KinectGame.csproj", "{7784EDAF-05FF-4F5B-992A-CF6EA145D754}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinectGameContent", "KinectGame\KinectGameContent\KinectGameContent.contentproj", "{FB2BF278-0F06-4C80-943B-FCEDE01C95D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{058D5378-65B1-45CF-A816-6902B19DD87B}"
+	ProjectSection(SolutionItems) = preProject
+		README.txt = README.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7784EDAF-05FF-4F5B-992A-CF6EA145D754}.Debug|x86.ActiveCfg = Debug|x86
+		{7784EDAF-05FF-4F5B-992A-CF6EA145D754}.Debug|x86.Build.0 = Debug|x86
+		{7784EDAF-05FF-4F5B-992A-CF6EA145D754}.Release|x86.ActiveCfg = Release|x86
+		{7784EDAF-05FF-4F5B-992A-CF6EA145D754}.Release|x86.Build.0 = Release|x86
+		{FB2BF278-0F06-4C80-943B-FCEDE01C95D5}.Debug|x86.ActiveCfg = Debug|x86
+		{FB2BF278-0F06-4C80-943B-FCEDE01C95D5}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
