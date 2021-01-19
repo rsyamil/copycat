@@ -1,0 +1,1 @@
+C:\Users\jason\Documents\GitHub\eecs481\KinectGame\KinectGame\KinectGameContent\obj\x86\Release\ResolveAssemblyReference.cache

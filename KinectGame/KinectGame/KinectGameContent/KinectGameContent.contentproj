@@ -42,7 +42,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Level-1\Background-1.png">
+    <Compile Include="Level-2\Background-1.png">
       <Name>Background-1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -63,25 +63,1219 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Level-2\" />
-    <Folder Include="Level-3\" />
-    <Folder Include="Level-4\" />
-    <Folder Include="Level-5\" />
-    <Folder Include="Level-6\" />
     <Folder Include="Level-7\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Level-1\James.png">
-      <Name>James</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alert.png">
       <Name>Alert</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Level-0\joint.png">
+      <Name>joint</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Level-2\James1.png">
+      <Name>James1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-2\James2.png">
+      <Name>James2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-2\James3.png">
+      <Name>James3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-2\James4.png">
+      <Name>James4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="displayFont.spritefont">
+      <Name>displayFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ButtonText.spritefont">
+      <Name>ButtonText</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Green.bmp">
+      <Name>Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Yellow.bmp">
+      <Name>Yellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SplashScreen\SplashScreen1.png">
+      <Name>SplashScreen1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SplashScreen\SplashScreen2.png">
+      <Name>SplashScreen2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SplashScreen\SplashScreen3.png">
+      <Name>SplashScreen3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SplashScreen\SplashScreen_v2.png">
+      <Name>SplashScreen_v2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Level-2\James.png">
+      <Name>James</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Level-2\expectedCoordinates.txt">
+      <Name>expectedCoordinates</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SplashScreen\start1.png">
+      <Name>start1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SplashScreen\start2.png">
+      <Name>start2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Level-2\3d_pose0.txt">
+      <Name>3d_pose0</Name>
+    </None>
+    <None Include="Level-2\3d_pose1.txt">
+      <Name>3d_pose1</Name>
+    </None>
+    <None Include="Level-2\3d_pose2.txt">
+      <Name>3d_pose2</Name>
+    </None>
+    <None Include="Level-2\3d_pose3.txt">
+      <Name>3d_pose3</Name>
+    </None>
+    <None Include="Level-2\3d_pose4.txt">
+      <Name>3d_pose4</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Level-2\CopyCat_v8_p0.png">
+      <Name>CopyCat_v8_p0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-2\CopyCat_v8_p1.png">
+      <Name>CopyCat_v8_p1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-2\CopyCat_v8_p2.png">
+      <Name>CopyCat_v8_p2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-2\CopyCat_v8_p3.png">
+      <Name>CopyCat_v8_p3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-2\CopyCat_v8_p4.png">
+      <Name>CopyCat_v8_p4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-2\CopyCat_v8_p5.png">
+      <Name>CopyCat_v8_p5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Level-0\largeJoint.png">
+      <Name>largeJoint</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-0\mediumJoint.png">
+      <Name>mediumJoint</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-0\smallJoint.png">
+      <Name>smallJoint</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="applause-4.wav">
+      <Name>applause-4</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Level-0\paw.png">
+      <Name>paw</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SplashScreen\largeJoint.png">
+      <Name>largeJoint</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SplashScreen\mediumJoint.png">
+      <Name>mediumJoint</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SplashScreen\paw.png">
+      <Name>paw</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SplashScreen\peeky1.png">
+      <Name>peeky1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SplashScreen\peeky2.png">
+      <Name>peeky2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SplashScreen\peeky3.png">
+      <Name>peeky3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SplashScreen\peeky4.png">
+      <Name>peeky4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SplashScreen\PeekyCover1.png">
+      <Name>PeekyCover1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SplashScreen\PeekyCover2.png">
+      <Name>PeekyCover2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SplashScreen\PeekyCover3.png">
+      <Name>PeekyCover3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SplashScreen\PeekyCover4.png">
+      <Name>PeekyCover4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SplashScreen\smallJoint.png">
+      <Name>smallJoint</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SplashScreen\SplashScreen.png">
+      <Name>SplashScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="White.bmp">
+      <Name>White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="YellowTarget.png">
+      <Name>YellowTarget</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GreenTarget.png">
+      <Name>GreenTarget</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Blue.bmp">
+      <Name>Blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="timer.png">
+      <Name>timer</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DarkGreen.bmp">
+      <Name>DarkGreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Red.bmp">
+      <Name>Red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="hourglass.png">
+      <Name>hourglass</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SplashScreen\Bone.png">
+      <Name>Bone</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SplashScreen\Joint.png">
+      <Name>Joint</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TargetCircle_hover.png">
+      <Name>TargetCircle_hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="TargetCircle_normal.png">
+      <Name>TargetCircle_normal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Level-2\Italian_Level3.png">
+      <Name>Italian_Level3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-2\Italian_Level3_1Up.png">
+      <Name>Italian_Level3_1Up</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-2\Italian_Level3_GoldCoin.png">
+      <Name>Italian_Level3_GoldCoin</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-2\Italian_Level3_GrayMouse.png">
+      <Name>Italian_Level3_GrayMouse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-2\Italian_Level3_GreenOlive.png">
+      <Name>Italian_Level3_GreenOlive</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-2\Italian_Level3_GreenPepper.png">
+      <Name>Italian_Level3_GreenPepper</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-2\Italian_Level3_Ham.png">
+      <Name>Italian_Level3_Ham</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-2\Italian_Level3_Mushroom.png">
+      <Name>Italian_Level3_Mushroom</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-2\Italian_Level3_RedOnion.png">
+      <Name>Italian_Level3_RedOnion</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Level-3\background_basketball.png">
+      <Name>background_basketball</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-3\basketball.png">
+      <Name>basketball</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Level-4\flower_face.png">
+      <Name>flower_face</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-4\moon_face.png">
+      <Name>moon_face</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-4\space_background.png">
+      <Name>space_background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-4\sun_face.png">
+      <Name>sun_face</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Level-1\halloween.png">
+      <Name>halloween</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Level-5\falling_note1.png">
+      <Name>falling_note1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-5\falling_note2.png">
+      <Name>falling_note2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-5\falling_note3.png">
+      <Name>falling_note3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-5\falling_note4.png">
+      <Name>falling_note4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-5\falling_note5.png">
+      <Name>falling_note5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-5\falling_note6.png">
+      <Name>falling_note6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Level-5\dancebackground.png">
+      <Name>dancebackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Level-6\Score-Page-2star.png">
+      <Name>Score-Page-2star</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-6\Score-Page-3star.png">
+      <Name>Score-Page-3star</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-6\Score-Page-4star.png">
+      <Name>Score-Page-4star</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-6\Score-Page-5star.png">
+      <Name>Score-Page-5star</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-6\Score-Page-Background.png">
+      <Name>Score-Page-Background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-6\Score-Page-OKButton-Hover.png">
+      <Name>Score-Page-OKButton-Hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-6\Score-Page-OKButton.png">
+      <Name>Score-Page-OKButton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SettingsScreen\settingsBackground.png">
+      <Name>settingsBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Level-1\3d_pose0.txt">
+      <Name>3d_pose0</Name>
+    </None>
+    <None Include="Level-1\3d_pose1.txt">
+      <Name>3d_pose1</Name>
+    </None>
+    <None Include="Level-1\3d_pose2.txt">
+      <Name>3d_pose2</Name>
+    </None>
+    <None Include="Level-1\3d_pose3.txt">
+      <Name>3d_pose3</Name>
+    </None>
+    <None Include="Level-1\3d_pose4.txt">
+      <Name>3d_pose4</Name>
+    </None>
+    <None Include="Level-1\expectedCoordinates.txt">
+      <Name>expectedCoordinates</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Level-3\3d_pose0.txt">
+      <Name>3d_pose0</Name>
+    </None>
+    <None Include="Level-3\3d_pose1.txt">
+      <Name>3d_pose1</Name>
+    </None>
+    <None Include="Level-3\3d_pose2.txt">
+      <Name>3d_pose2</Name>
+    </None>
+    <None Include="Level-3\3d_pose3.txt">
+      <Name>3d_pose3</Name>
+    </None>
+    <None Include="Level-3\3d_pose4.txt">
+      <Name>3d_pose4</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Level-3\expectedCoordinates.txt">
+      <Name>expectedCoordinates</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Level-4\3d_pose0.txt">
+      <Name>3d_pose0</Name>
+    </None>
+    <None Include="Level-4\3d_pose1.txt">
+      <Name>3d_pose1</Name>
+    </None>
+    <None Include="Level-4\3d_pose2.txt">
+      <Name>3d_pose2</Name>
+    </None>
+    <None Include="Level-4\3d_pose3.txt">
+      <Name>3d_pose3</Name>
+    </None>
+    <None Include="Level-4\3d_pose4.txt">
+      <Name>3d_pose4</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Level-5\3d_pose0.txt">
+      <Name>3d_pose0</Name>
+    </None>
+    <None Include="Level-5\3d_pose1.txt">
+      <Name>3d_pose1</Name>
+    </None>
+    <None Include="Level-5\3d_pose2.txt">
+      <Name>3d_pose2</Name>
+    </None>
+    <None Include="Level-5\3d_pose3.txt">
+      <Name>3d_pose3</Name>
+    </None>
+    <None Include="Level-5\3d_pose4.txt">
+      <Name>3d_pose4</Name>
+    </None>
+    <None Include="Level-5\expectedCoordinates.txt">
+      <Name>expectedCoordinates</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Poses\pose0.png">
+      <Name>pose0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose1.png">
+      <Name>pose1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose10.png">
+      <Name>pose10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose11.png">
+      <Name>pose11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose12.png">
+      <Name>pose12</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose13.png">
+      <Name>pose13</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose2.png">
+      <Name>pose2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose3.png">
+      <Name>pose3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose4.png">
+      <Name>pose4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose5.png">
+      <Name>pose5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose6.png">
+      <Name>pose6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose7.png">
+      <Name>pose7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose8.png">
+      <Name>pose8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose9.png">
+      <Name>pose9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Level-4\expectedCoordinates.txt">
+      <Name>expectedCoordinates</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Level-1\pumpkin1.png">
+      <Name>pumpkin1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-1\pumpkin2.png">
+      <Name>pumpkin2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-1\pumpkin3.png">
+      <Name>pumpkin3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-1\wizardhat.png">
+      <Name>wizardhat</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Loading-1.png">
+      <Name>Loading-1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Loading-2.png">
+      <Name>Loading-2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Loading-3.png">
+      <Name>Loading-3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Loading-4.png">
+      <Name>Loading-4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Loading-5.png">
+      <Name>Loading-5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Loading-6.png">
+      <Name>Loading-6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Loading-7.png">
+      <Name>Loading-7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Loading-8.png">
+      <Name>Loading-8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TargetCircle_hover_large.png">
+      <Name>TargetCircle_hover_large</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="TargetCircle_hover_medium.png">
+      <Name>TargetCircle_hover_medium</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="TargetCircle_hover_small.png">
+      <Name>TargetCircle_hover_small</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="TargetCircle_normal_large.png">
+      <Name>TargetCircle_normal_large</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="TargetCircle_normal_medium.png">
+      <Name>TargetCircle_normal_medium</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="TargetCircle_normal_small.png">
+      <Name>TargetCircle_normal_small</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Level-0\Level-Page-Back-Hover.png">
+      <Name>Level-Page-Back-Hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-0\Level-Page-Back.png">
+      <Name>Level-Page-Back</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Level-0\loadingcircle.png">
+      <Name>loadingcircle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PlayerScreen\Player-Page-Felix-Hover.png">
+      <Name>Player-Page-Felix-Hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PlayerScreen\Player-Page-Felix.png">
+      <Name>Player-Page-Felix</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PlayerScreen\Player-Page-Garfield-Hover.png">
+      <Name>Player-Page-Garfield-Hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PlayerScreen\Player-Page-Garfield.png">
+      <Name>Player-Page-Garfield</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PlayerScreen\Player-Page-Howto-Hover.png">
+      <Name>Player-Page-Howto-Hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PlayerScreen\Player-Page-Howto.png">
+      <Name>Player-Page-Howto</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PlayerScreen\Player-Page-Info-Hover.png">
+      <Name>Player-Page-Info-Hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PlayerScreen\Player-Page-Info.png">
+      <Name>Player-Page-Info</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PlayerScreen\Player-Page-Settings-Hover.png">
+      <Name>Player-Page-Settings-Hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PlayerScreen\Player-Page-Settings.png">
+      <Name>Player-Page-Settings</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PlayerScreen\Player-Page-Spotty-Hover.png">
+      <Name>Player-Page-Spotty-Hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PlayerScreen\Player-Page-Spotty.png">
+      <Name>Player-Page-Spotty</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PlayerScreen\PlayerBackground.png">
+      <Name>PlayerBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LevelScreen\Level-Page-BasketBall-Hover.png">
+      <Name>Level-Page-BasketBall-Hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="LevelScreen\Level-Page-Basketball.png">
+      <Name>Level-Page-Basketball</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="LevelScreen\Level-Page-Chef-Hover.png">
+      <Name>Level-Page-Chef-Hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="LevelScreen\Level-Page-Chef.png">
+      <Name>Level-Page-Chef</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="LevelScreen\Level-Page-Halloween-Hover.png">
+      <Name>Level-Page-Halloween-Hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="LevelScreen\Level-Page-Halloween.png">
+      <Name>Level-Page-Halloween</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="LevelScreen\Level-Page-Level3-Hover.png">
+      <Name>Level-Page-Level3-Hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="LevelScreen\Level-Page-Level3.png">
+      <Name>Level-Page-Level3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="LevelScreen\Level-Page-Level5-Hover.png">
+      <Name>Level-Page-Level5-Hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="LevelScreen\Level-Page-Level5.png">
+      <Name>Level-Page-Level5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="LevelScreen\LevelBackground.png">
+      <Name>LevelBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ScoreScreen\Score-Page-2star.png">
+      <Name>Score-Page-2star</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ScoreScreen\Score-Page-3star.png">
+      <Name>Score-Page-3star</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ScoreScreen\Score-Page-4star.png">
+      <Name>Score-Page-4star</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ScoreScreen\Score-Page-5star.png">
+      <Name>Score-Page-5star</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ScoreScreen\Score-Page-Background.png">
+      <Name>Score-Page-Background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ScoreScreen\Score-Page-OKButton-Hover.png">
+      <Name>Score-Page-OKButton-Hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ScoreScreen\Score-Page-OKButton.png">
+      <Name>Score-Page-OKButton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InfoScreen\Info-Page.png">
+      <Name>Info-Page</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SplashScreen\exit1.png">
+      <Name>exit1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="SplashScreen\exit2.png">
+      <Name>exit2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PlayerScreen\felix-hover.png">
+      <Name>felix-hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PlayerScreen\felix.png">
+      <Name>felix</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PlayerScreen\garfield-hover.png">
+      <Name>garfield-hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PlayerScreen\garfield.png">
+      <Name>garfield</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PlayerScreen\Player-Page-Pres.png">
+      <Name>Player-Page-Pres</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PlayerScreen\spotty-hover.png">
+      <Name>spotty-hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PlayerScreen\spotty.png">
+      <Name>spotty</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Poses\pose0_G.png">
+      <Name>pose0_G</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose0_O.png">
+      <Name>pose0_O</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose0_P.png">
+      <Name>pose0_P</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose10_G.png">
+      <Name>pose10_G</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose10_O.png">
+      <Name>pose10_O</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose10_P.png">
+      <Name>pose10_P</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose11_G.png">
+      <Name>pose11_G</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose11_O.png">
+      <Name>pose11_O</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose11_P.png">
+      <Name>pose11_P</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose12_G.png">
+      <Name>pose12_G</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose12_O.png">
+      <Name>pose12_O</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose12_P.png">
+      <Name>pose12_P</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose13_G.png">
+      <Name>pose13_G</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose13_O.png">
+      <Name>pose13_O</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose13_P.png">
+      <Name>pose13_P</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose1_G.png">
+      <Name>pose1_G</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose1_O.png">
+      <Name>pose1_O</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose1_P.png">
+      <Name>pose1_P</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose2_G.png">
+      <Name>pose2_G</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose2_O.png">
+      <Name>pose2_O</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose2_P.png">
+      <Name>pose2_P</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose3_G.png">
+      <Name>pose3_G</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose3_O.png">
+      <Name>pose3_O</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose3_P.png">
+      <Name>pose3_P</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose4_G.png">
+      <Name>pose4_G</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose4_O.png">
+      <Name>pose4_O</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose4_P.png">
+      <Name>pose4_P</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose5_G.png">
+      <Name>pose5_G</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose5_O.png">
+      <Name>pose5_O</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose5_P.png">
+      <Name>pose5_P</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose6_G.png">
+      <Name>pose6_G</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose6_O.png">
+      <Name>pose6_O</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose6_P.png">
+      <Name>pose6_P</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose7_G.png">
+      <Name>pose7_G</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose7_O.png">
+      <Name>pose7_O</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose7_P.png">
+      <Name>pose7_P</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose8_G.png">
+      <Name>pose8_G</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose8_O.png">
+      <Name>pose8_O</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose8_P.png">
+      <Name>pose8_P</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose9_G.png">
+      <Name>pose9_G</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose9_O.png">
+      <Name>pose9_O</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Poses\pose9_P.png">
+      <Name>pose9_P</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HowToScreen\CopyCat_HowTo.wmv">
+      <Name>CopyCat_HowTo</Name>
+      <Importer>WmvImporter</Importer>
+      <Processor>VideoProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

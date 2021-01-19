@@ -1,0 +1,626 @@
+﻿/********************************************************************
+ * Name         : DrawingClass.cs
+ * Author       : Syamil Razak
+ * Description  : This class handles all drawing methods pertaining to
+ * user interface, graphics and animations. 
+ * 
+ * Notes        : Aspect Ratio 16:9. Keep background image to this ratio 
+ * if possible
+ * 2/21/2012 (Rebecca) - Added shadow draw method. 
+ * 2/23/2012 (Syamil) - Added scaling method to fit screen of all sizes
+ * 
+ * *****************************************************************/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO;
+using System.Diagnostics;
+
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Kinect;
+
+namespace KinectGame
+{
+    /// <summary>
+    /// Avatar enum for Drawing method that will draw the Avatars
+    /// Avatar.Change   : change avatar
+    /// Avatar.Done     : level has ended
+    /// Avatar.None     : do nothing, don't change yet
+    /// </summary>
+    public enum Avatar { Change, Done, None };
+
+    public class DrawingClass : Microsoft.Xna.Framework.Game
+    {
+        GraphicsDeviceManager graphicsManager;
+        SpriteBatch spriteBatch;
+        ContentManager contentManager;
+
+        SpriteFont font;
+        SpriteFont hudFont;
+        SpriteFont buttonFont;
+
+        string connectedStatus = "Status: Not connected";
+        double elapsedTime;
+        double prevElapsedTime;
+        double totalScore;
+        int displayTime;
+        int level = 0;
+
+        SoundEffect applause;
+
+        Texture2D smallJoint;
+        Texture2D mediumJoint;
+        Texture2D largeJoint;
+
+        Texture2D cursor;
+        Texture2D alert;
+        Texture2D background;
+        Texture2D avatar;
+        Texture2D kinectRGBVideo;
+        Texture2D splashScreen;
+        Texture2D greenBackground;
+        Texture2D yellowBackground;
+
+        // Holds SplashScreen animation
+        List<Texture2D> peekyCats;
+
+        // Buttons for navigation
+        Rectangle playArea;
+        Button playButton;
+        Rectangle replayArea;
+        TextButton replayButton;
+        Rectangle quitArea;
+        TextButton quitButton;
+
+        int avatarCount = 0;
+        bool changedAlready = true;
+
+        Vector2 cursorPosition;
+
+        int skeletonWidth;
+        int skeletonHeight;
+
+        public int screenWidth;
+        public int screenHeight;
+
+        AccuracyClass accuracyClass;
+        Clipped clipped;
+        ObjectAnimator animatorSplashScreen;
+
+        TargetCircles[] poses;
+        Dictionary<int, JointType> targetJoints;
+
+        bool loadedLevel;
+
+        // Scale for 1366x768
+        float backgroundScale = 1.55f;
+        float avatarScale = 1.8f;
+        Vector2 statusPosition = new Vector2(10, 700);
+        Vector2 coordinatePosition = new Vector2(300, 700);
+        Vector2 avatarPosition = new Vector2(620, 370);
+        Vector2 timerPosition = new Vector2(220, 560);
+        Vector2 scorePosition = new Vector2(1000, 560);
+        float shiftFactorX = 100;
+        float shiftFactorY = 170;
+        Vector2 topEdge = new Vector2(650, 10);
+        Vector2 bottomEdge = new Vector2(650, 700);
+        Vector2 rightEdge = new Vector2(1300, 350);
+        Vector2 leftEdge = new Vector2(10, 350);
+
+        public DrawingClass(GraphicsDeviceManager graphicsManager, ContentManager content)
+        {         
+            this.graphicsManager = graphicsManager;
+            this.contentManager = content;
+            this.contentManager.RootDirectory = "Content";
+            this.elapsedTime = 0;
+            this.prevElapsedTime = 0;
+            this.loadedLevel = false;
+
+            targetJoints = new Dictionary<int, JointType>();
+            targetJoints.Add(0, JointType.HandLeft);
+            targetJoints.Add(1, JointType.HandRight);
+            targetJoints.Add(2, JointType.FootLeft);
+            targetJoints.Add(3, JointType.FootRight);
+
+            this.accuracyClass = new AccuracyClass();
+
+            this.peekyCats = new List<Texture2D>();
+
+        }
+
+        public void SetFrameSize()
+        {
+            this.screenWidth = this.graphicsManager.PreferredBackBufferWidth;
+            this.screenHeight = this.graphicsManager.PreferredBackBufferHeight;
+            MakeFullScreen();
+            this.skeletonHeight = this.graphicsManager.PreferredBackBufferHeight;
+            this.skeletonWidth = this.graphicsManager.PreferredBackBufferWidth;
+        }
+
+        public void MakeFullScreen()
+        {
+            if (!this.graphicsManager.IsFullScreen)
+            {
+                this.graphicsManager.ToggleFullScreen();
+            }           
+        }
+
+        public void LoadDrawingClass()
+        {
+            // for LoadingScreen animation
+            List<Texture2D> textures = new List<Texture2D>();
+            textures.Add(this.contentManager.Load<Texture2D>("SplashScreen/paw"));
+            textures.Add(this.contentManager.Load<Texture2D>("SplashScreen/mediumJoint"));
+            textures.Add(this.contentManager.Load<Texture2D>("SplashScreen/largeJoint"));
+            //this.animatorSplashScreen = new ObjectAnimator(textures, new Vector2(400, 240), AnimationOption.Random);
+
+            // for SplashScreen animation
+            this.cursor = this.contentManager.Load<Texture2D>("SplashScreen/paw");
+            this.splashScreen = this.contentManager.Load<Texture2D>("SplashScreen/SplashScreen");
+            this.peekyCats.Add(this.contentManager.Load<Texture2D>("SplashScreen/peeky1"));
+            this.peekyCats.Add(this.contentManager.Load<Texture2D>("SplashScreen/peeky2"));
+            this.peekyCats.Add(this.contentManager.Load<Texture2D>("SplashScreen/peeky3"));
+            this.peekyCats.Add(this.contentManager.Load<Texture2D>("SplashScreen/peeky4"));
+            this.peekyCats.Add(this.contentManager.Load<Texture2D>("SplashScreen/PeekyCover1"));
+            this.peekyCats.Add(this.contentManager.Load<Texture2D>("SplashScreen/PeekyCover2"));
+            this.peekyCats.Add(this.contentManager.Load<Texture2D>("SplashScreen/PeekyCover3"));
+            this.peekyCats.Add(this.contentManager.Load<Texture2D>("SplashScreen/PeekyCover4"));
+            this.animatorSplashScreen = new ObjectAnimator(this.peekyCats, new Vector2(0, 0), AnimationOption.SplashScreen);
+
+            this.hudFont = this.contentManager.Load<SpriteFont>("displayFont");
+            this.buttonFont = this.contentManager.Load<SpriteFont>("ButtonText");
+            this.font = this.contentManager.Load<SpriteFont>("Score");            
+            this.alert = this.contentManager.Load<Texture2D>("Alert");
+
+            this.greenBackground = this.contentManager.Load<Texture2D>("Green");
+            this.yellowBackground = this.contentManager.Load<Texture2D>("Yellow");            
+
+            this.smallJoint = this.contentManager.Load<Texture2D>("SplashScreen/smallJoint");
+            this.mediumJoint = this.contentManager.Load<Texture2D>("SplashScreen/mediumJoint");
+            this.largeJoint = this.contentManager.Load<Texture2D>("SplashScreen/largeJoint");
+
+            //sound effect
+            this.applause = this.contentManager.Load<SoundEffect>("applause-4");
+
+            this.playArea = new Rectangle(530, 640, 188, 82);
+            this.playButton = new Button("SplashScreen/start1", "SplashScreen/start2", this.contentManager, playArea);
+
+            this.replayArea = new Rectangle(50, 50, 300, 300);
+            this.replayButton = new TextButton("Green", "Yellow", "Replay Level", this.contentManager, replayArea, new Vector2(25, 25));
+
+            this.quitArea = new Rectangle(50, 450, 300, 300);
+            this.quitButton = new TextButton("Green", "Yellow", "Quit Game", this.contentManager, quitArea, new Vector2(25, 25));
+        }
+
+        public void LoadLevel(Skeleton skele, Avatar avatarStat)
+        {
+            spriteBatch = new SpriteBatch(this.graphicsManager.GraphicsDevice);
+            spriteBatch.Begin();
+            this.graphicsManager.GraphicsDevice.Clear(Color.White);
+  
+            switch (this.level)
+            {
+                case 0: // Splash Screen
+                    {             
+                        spriteBatch.Draw(this.splashScreen, Vector2.Zero, null, Color.White, 0f, Vector2.Zero,
+                            backgroundScale, SpriteEffects.None, 0f);                        
+
+                        playButton.updateButton(cursorPosition, ((elapsedTime - prevElapsedTime)));
+                        if (playButton.isButtonTriggered())
+                        {
+                            this.level = 1;
+                            playButton.resetButton();
+                        }
+                        playButton.drawButton(spriteBatch);                  
+
+                        spriteBatch.Draw(this.splashScreen, Vector2.Zero, null, Color.White, 0f, Vector2.Zero,
+                            backgroundScale, SpriteEffects.None, 0f);                        
+
+                        this.animatorSplashScreen.Update();
+                        this.animatorSplashScreen.Draw(spriteBatch);
+
+                        spriteBatch.Draw(this.cursor, cursorPosition, Color.White);
+                        break;
+                    }
+                case 1:
+                    {
+                        if (!loadedLevel)
+                        {
+                            accuracyClass.ResetTotalScore();
+                            generateTargetCircles("expectedCoordinates.txt");
+                            loadedLevel = true;
+                        }
+                        
+                        this.background = this.contentManager.Load<Texture2D>("Level-1/Background-1");
+
+                        // load different images for poses
+                        string[] poseStr = new string[] { "Level-1/CopyCat_v8_p0",
+                                                           "Level-1/CopyCat_v8_p2",
+                                                           "Level-1/CopyCat_v8_p3",
+                                                           "Level-1/CopyCat_v8_p4",
+                                                           "Level-1/CopyCat_v8_p5",
+                                                           "Level-1/CopyCat_v8_p1" };
+
+                        if (avatarStat == Avatar.Change && changedAlready == false)
+                        {
+                            avatarCount++;
+                            changedAlready = true;
+                        } else if (avatarStat == Avatar.Done) {
+                            avatarCount = 0;
+                        }
+                        else if (avatarStat == Avatar.None)
+                        {
+                            changedAlready = false;
+                        }
+                        else { }
+                        
+
+                        if (avatarCount < poseStr.Length)
+                        {
+                            this.avatar = this.contentManager.Load<Texture2D>(poseStr[avatarCount]);
+                        }
+
+                        spriteBatch.Draw(this.background, Vector2.Zero, null, Color.White, 0f, Vector2.Zero,
+                            backgroundScale, SpriteEffects.None, 0f);
+                        spriteBatch.Draw(this.avatar, avatarPosition, null, Color.White, 0f, Vector2.Zero, 
+                            avatarScale, SpriteEffects.None, 0f);
+
+                        //spriteBatch.DrawString(font, "Coordinate : " + cursorPosition.ToString(),
+                        //    this.coordinatePosition, Color.White);
+                        //spriteBatch.DrawString(font, this.connectedStatus, this.statusPosition, Color.White);
+
+                        spriteBatch.DrawString(hudFont, displayTime.ToString(), timerPosition, Color.White);
+                        spriteBatch.DrawString(hudFont, Math.Round(totalScore).ToString(), scorePosition, Color.White);
+                        DrawShadow(skele, spriteBatch);
+                        RenderClippedEdges(this.clipped);
+
+                        int poseID = ((30 - displayTime) / 5) % 5;
+                        poses[poseID].drawCircle(spriteBatch);
+
+                        if (displayTime == 0)
+                        {
+                            this.level = 6;
+                            loadedLevel = false;
+                        }
+                        break;
+                    }
+                case 2:
+                    {
+                        break;
+                    }
+                case 3:
+                    {
+                        break;
+                    }
+                case 4:
+                    {
+                        break;
+                    }
+                case 5:
+                    {
+                        break;
+                    }
+                case 6: // profilePage
+                    {
+                        this.applause.Play();
+                        this.graphicsManager.GraphicsDevice.Clear(Color.White);   
+
+                        replayButton.updateButton(cursorPosition, ((elapsedTime - prevElapsedTime)));
+                        if (replayButton.isButtonTriggered())
+                        {
+                            this.level = 1;
+                            replayButton.resetButton();
+                        }
+
+                        quitButton.updateButton(cursorPosition, ((elapsedTime - prevElapsedTime)));
+                        if (quitButton.isButtonTriggered())
+                        {
+                            Exit();
+                        }
+
+                        replayButton.drawButton(spriteBatch);
+                        quitButton.drawButton(spriteBatch);
+                        spriteBatch.Draw(this.cursor, cursorPosition, Color.White);
+
+                        break;
+                    }
+                default:
+                    {
+                        break;
+                    }
+            }           
+
+            //spriteBatch.Draw(this.kinectRGBVideo, new Rectangle(0, 0,
+            //   graphicsManager.PreferredBackBufferWidth,
+            //   graphicsManager.PreferredBackBufferHeight), Color.White);
+            spriteBatch.End();
+        }
+
+        public void DrawSplashScreenAnimation(SpriteBatch spriteBatch)
+        {
+
+
+
+        }
+
+        public void RenderClippedEdges(Clipped clipped)
+        {
+            if (clipped == Clipped.top)
+            {
+                spriteBatch.Draw(this.alert, topEdge, Color.White);
+            }
+            if (clipped == Clipped.bottom)
+            {
+                spriteBatch.Draw(this.alert, bottomEdge , Color.White);
+            }
+            if (clipped == Clipped.right)
+            {
+                spriteBatch.Draw(this.alert, rightEdge, Color.White);
+            }
+            if (clipped == Clipped.left)
+            {     
+                spriteBatch.Draw(this.alert, leftEdge, Color.White);
+            }        
+        }
+
+        public void SetVideo(GraphicsDeviceManager graphicsManager, int width, int height)
+        {
+            if ((width != 0) && (height != 0))
+            {
+                this.kinectRGBVideo = new Texture2D(this.graphicsManager.GraphicsDevice, width, height);
+            }
+        }
+
+        public void SetData(Color[] color)
+        {
+            if (color != null)
+            {
+                this.kinectRGBVideo.SetData(color);
+            }
+        }
+
+        public void SetCursorPosition(Vector2 cursorPosition) 
+        {
+            this.cursorPosition = cursorPosition;
+        }
+
+        public void SetKinectStatus(string connectedStatus)
+        {
+            this.connectedStatus = connectedStatus;
+        }
+
+        public void SetClippedStatus(Clipped clipped)
+        {
+            this.clipped = clipped;
+        }
+
+        public void SetElapsedTime(double inTime)
+        {
+            prevElapsedTime = elapsedTime;
+            elapsedTime = inTime;            
+        }
+
+        public void SetDisplayedTime(int inDisplayTime)
+        {
+            displayTime = inDisplayTime;
+        }
+
+        public void SetTotalScore(double inTotalScore)
+        {
+            totalScore = inTotalScore;
+        }
+
+        public void generateTargetCircles(String fileName)
+        {
+            double[, ,] expectedCoordinates = this.accuracyClass.ReturnExpectedCoordinate(fileName);
+            int numPoses = 5;
+            poses = new TargetCircles[numPoses];
+            int numTargets = 4;
+            for (int i = 0; i < numPoses; i++)
+            {
+                Vector2[] targetCoordinates = new Vector2[numTargets];
+                for (int j = 0; j < numTargets; j++)
+                {
+                    targetCoordinates[j].X = (float)expectedCoordinates[i, (int)targetJoints[j], 0];
+                    targetCoordinates[j].Y = (float)expectedCoordinates[i, (int)targetJoints[j], 1];
+                }
+                poses[i] = new TargetCircles(this.greenBackground, this.yellowBackground, targetCoordinates);
+                //totalScore = inTotalScore;
+            }
+        }
+
+        public int getLevel()
+        {
+            return this.level;
+        }
+
+        /// <summary>
+        /// Check keyboard input and then handle navigation in game
+        /// </summary>
+        public void navigateLevels(Command command)
+        {
+            if (command == Command.toLevel0) this.level = 0;
+            else if (command == Command.toLevel1) this.level = 1;
+            else if (command == Command.toLevel2) this.level = 2;
+            else if (command == Command.toLevel3) this.level = 3;
+            else if (command == Command.toLevel4) this.level = 4;
+            else if (command == Command.toLevel5) this.level = 5;
+            else if (command == Command.toProfilePage) this.level = 6;
+            else { }
+        }
+
+        /// <summary>
+        /// Draws a line in the with the spriteBatch from pt1 to pt2
+        /// </summary>
+        /// <param name="spriteBatch"></param>
+        /// <param name="pt1"></param>
+        /// <param name="pt2"></param>
+        private void DrawLine(SpriteBatch spriteBatch, Vector2 pt1, Vector2 pt2)
+        {
+            Vector2 shiftedpt1 = new Vector2(pt1.X + shiftFactorX, pt1.Y + shiftFactorY);
+            Vector2 shiftedpt2 = new Vector2(pt2.X + shiftFactorX, pt2.Y + shiftFactorY);
+
+            Vector2 xVector = new Vector2(1, 0);
+            bool x1 = false;
+            Texture2D texture = new Texture2D(this.graphicsManager.GraphicsDevice, 1, 1, x1, SurfaceFormat.Color);
+            texture.SetData(new[] { Color.White });
+            float angle = (float)Math.Atan2(shiftedpt2.Y - shiftedpt1.Y, shiftedpt2.X - shiftedpt1.X);
+            float length = (shiftedpt2 - shiftedpt1).Length();
+
+            spriteBatch.Draw(texture, shiftedpt1, null, Color.DarkSlateGray,
+                       angle, Vector2.Zero, new Vector2(length, 1),
+                       SpriteEffects.None, 0);
+        }
+
+        public void DrawShadow(Skeleton skeleton, SpriteBatch spriteBatch)
+        {
+            if (skeleton != null)
+            {
+                // Right Hand
+                JointType handRight = JointType.HandRight;
+                JointType wristRight = JointType.WristRight;
+                JointType elbowRight = JointType.ElbowRight;
+                JointType shoulderRight = JointType.ShoulderRight;
+
+                Vector2 rightHand = new Vector2((((0.5f * skeleton.Joints[handRight].Position.X) + 0.5f) * (skeletonWidth)),
+                        (((-0.5f * skeleton.Joints[handRight].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                Vector2 rightWrist = new Vector2((((0.5f * skeleton.Joints[wristRight].Position.X) + 0.5f) * (skeletonWidth)),
+                        (((-0.5f * skeleton.Joints[wristRight].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                Vector2 rightElbow = new Vector2((((0.5f * skeleton.Joints[elbowRight].Position.X) + 0.5f) * (skeletonWidth)),
+                        (((-0.5f * skeleton.Joints[elbowRight].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                Vector2 rightShoulder = new Vector2((((0.5f * skeleton.Joints[shoulderRight].Position.X) + 0.5f) * (skeletonWidth)),
+                        (((-0.5f * skeleton.Joints[shoulderRight].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                DrawLine(spriteBatch, rightHand, rightWrist);
+                DrawLine(spriteBatch, rightWrist, rightElbow);
+                DrawLine(spriteBatch, rightElbow, rightShoulder);
+
+                //Left Hand
+                JointType handLeft = JointType.HandLeft;
+                JointType wristLeft = JointType.WristLeft;
+                JointType elbowLeft = JointType.ElbowLeft;
+                JointType shoulderLeft = JointType.ShoulderLeft;
+
+                Vector2 leftHand = new Vector2((((0.5f * skeleton.Joints[handLeft].Position.X) + 0.5f) * (skeletonWidth)),
+                        (((-0.5f * skeleton.Joints[handLeft].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                Vector2 leftWrist = new Vector2((((0.5f * skeleton.Joints[wristLeft].Position.X) + 0.5f) * (skeletonWidth)),
+                        (((-0.5f * skeleton.Joints[wristLeft].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                Vector2 leftElbow = new Vector2((((0.5f * skeleton.Joints[elbowLeft].Position.X) + 0.5f) * (skeletonWidth)),
+                      (((-0.5f * skeleton.Joints[elbowLeft].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                Vector2 leftShoulder = new Vector2((((0.5f * skeleton.Joints[shoulderLeft].Position.X) + 0.5f) * (skeletonWidth)),
+                        (((-0.5f * skeleton.Joints[shoulderLeft].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                DrawLine(spriteBatch, leftHand, leftWrist);
+                DrawLine(spriteBatch, leftWrist, leftElbow);
+                DrawLine(spriteBatch, leftElbow, leftShoulder);
+
+                //head - shoulders
+                JointType head = JointType.Head;
+                JointType shoulderCenter = JointType.ShoulderCenter;
+
+                Vector2 headVector = new Vector2((((0.5f * skeleton.Joints[head].Position.X) + 0.5f) * (skeletonWidth)),
+                      (((-0.5f * skeleton.Joints[head].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                Vector2 centerShoulder = new Vector2((((0.5f * skeleton.Joints[shoulderCenter].Position.X) + 0.5f) * (skeletonWidth)),
+                        (((-0.5f * skeleton.Joints[shoulderCenter].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                DrawLine(spriteBatch, rightShoulder, centerShoulder);
+                DrawLine(spriteBatch, headVector, centerShoulder);
+                DrawLine(spriteBatch, centerShoulder, leftShoulder);
+
+                //hips - spine
+                JointType hipRight = JointType.HipRight;
+                JointType hipCenter = JointType.HipCenter;
+                JointType hipLeft = JointType.HipLeft;
+                JointType spine = JointType.Spine;
+
+                Vector2 leftHip = new Vector2((((0.5f * skeleton.Joints[hipLeft].Position.X) + 0.5f) * (skeletonWidth)),
+                       (((-0.5f * skeleton.Joints[hipLeft].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                Vector2 rightHip = new Vector2((((0.5f * skeleton.Joints[hipRight].Position.X) + 0.5f) * (skeletonWidth)),
+                      (((-0.5f * skeleton.Joints[hipRight].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                Vector2 centerHip = new Vector2((((0.5f * skeleton.Joints[hipCenter].Position.X) + 0.5f) * (skeletonWidth)),
+                        (((-0.5f * skeleton.Joints[hipCenter].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                Vector2 spineVector = new Vector2((((0.5f * skeleton.Joints[spine].Position.X) + 0.5f) * (skeletonWidth)),
+                   (((-0.5f * skeleton.Joints[spine].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                DrawLine(spriteBatch, spineVector, centerShoulder);
+                DrawLine(spriteBatch, leftHip, centerHip);
+                DrawLine(spriteBatch, centerHip, rightHip);
+                DrawLine(spriteBatch, spineVector, centerHip);
+
+                //left leg/foot
+                JointType kneeLeft = JointType.KneeLeft;
+                JointType ankleLeft = JointType.AnkleLeft;
+                JointType footLeft = JointType.FootLeft;
+
+                Vector2 leftKnee = new Vector2((((0.5f * skeleton.Joints[kneeLeft].Position.X) + 0.5f) * (skeletonWidth)),
+                        (((-0.5f * skeleton.Joints[kneeLeft].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                Vector2 leftAnkle = new Vector2((((0.5f * skeleton.Joints[ankleLeft].Position.X) + 0.5f) * (skeletonWidth)),
+                        (((-0.5f * skeleton.Joints[ankleLeft].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                Vector2 leftFoot = new Vector2((((0.5f * skeleton.Joints[footLeft].Position.X) + 0.5f) * (skeletonWidth)),
+                      (((-0.5f * skeleton.Joints[footLeft].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                DrawLine(spriteBatch, leftHip, leftKnee);
+                DrawLine(spriteBatch, leftAnkle, leftKnee);
+                DrawLine(spriteBatch, leftAnkle, leftFoot);
+
+                //right leg/foot 
+                JointType kneeRight = JointType.KneeRight;
+                JointType ankleRight = JointType.AnkleRight;
+                JointType footRight = JointType.FootRight;
+
+                Vector2 rightKnee = new Vector2((((0.5f * skeleton.Joints[kneeRight].Position.X) + 0.5f) * (skeletonWidth)),
+                        (((-0.5f * skeleton.Joints[kneeRight].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                Vector2 rightAnkle = new Vector2((((0.5f * skeleton.Joints[ankleRight].Position.X) + 0.5f) * (skeletonWidth)),
+                        (((-0.5f * skeleton.Joints[ankleRight].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                Vector2 rightFoot = new Vector2((((0.5f * skeleton.Joints[footRight].Position.X) + 0.5f) * (skeletonWidth)),
+                      (((-0.5f * skeleton.Joints[footRight].Position.Y) + 0.5f) * (skeletonHeight)));
+
+                DrawLine(spriteBatch, rightHip, rightKnee);
+                DrawLine(spriteBatch, rightAnkle, rightKnee);
+                DrawLine(spriteBatch, rightAnkle, rightFoot);
+
+                //draw the joints
+                foreach (Joint joint in skeleton.Joints)
+                {
+                    Vector2 jointPosition = new Vector2((((0.5f * joint.Position.X) + 0.5f) * (skeletonWidth)) + shiftFactorX,
+                        (((-0.5f * joint.Position.Y) + 0.5f) * (skeletonHeight)) + shiftFactorY);
+
+                    if (joint.JointType == JointType.Head)
+                    {    //draw the largest size joint
+                        spriteBatch.Draw(this.largeJoint, jointPosition, Color.White);
+                    }
+                    else if (joint.JointType == JointType.HandRight || joint.JointType == JointType.HandLeft || joint.JointType == JointType.FootLeft || joint.JointType == JointType.FootLeft)
+                    {    //draw the medium sized joint
+                        spriteBatch.Draw(this.mediumJoint, jointPosition, Color.White);
+                    }
+                    else
+                    {
+                        spriteBatch.Draw(this.smallJoint, jointPosition, Color.White);
+                    }
+                }
+            }
+        }
+    }
+}

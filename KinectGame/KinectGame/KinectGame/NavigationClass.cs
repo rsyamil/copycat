@@ -2,13 +2,19 @@
  * Name         : NavigationClass.cs
  * Author       : Syamil Razak
  * Description  : This class handles all navigation methods pertaining to
- * moving between levels, start and end of game.   
+ * moving between levels, start and end of game, for easier debugging.
+ * 
+ * <space>        : exit game
+ * <numPad0>      : spashscreen
+ * <numPadn>      : move to level n, 1<=n<=5
+ * <numPad6>      : move to profilePage
  * 
  * *****************************************************************/
 
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Diagnostics;
 
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -22,19 +28,30 @@ using Microsoft.Kinect;
 
 namespace KinectGame
 {
+    /// <summary>
+    /// Enum for Clipped Edges. To be used in zooming in/out and also
+    /// to guide player to stay in the range of Kinect
+    /// </summary>
     public enum Clipped { top, bottom, right, left, none };
-    public enum Command { exitGame, pauseGame, resumeGame, none };
+
+    /// <summary>
+    /// Enum for moving between levels and navigation in game. 
+    /// </summary>
+    public enum Command { exitGame, pauseGame, resumeGame, toLevel0,
+                                                           toLevel1,
+                                                           toLevel2,
+                                                           toLevel3,
+                                                           toLevel4,
+                                                           toLevel5,
+                                                           toProfilePage,
+                                                           none };
 
     public class NavigationClass : Microsoft.Xna.Framework.Game
     {
         KeyboardState oldState;
-        Command currentCommand;
-
-        List<ButtonsInfo> buttonsInfoList = new List<ButtonsInfo>(); 
-
+ 
         public NavigationClass()
         {
-            //buttonsInfoList.Add(new Button
         }
 
         public Clipped CheckClippedEdges(Skeleton skeleton)
@@ -70,10 +87,8 @@ namespace KinectGame
         {
             KeyboardState newState = Keyboard.GetState();
 
-            // Check if space key is down
             if (newState.IsKeyDown(Keys.Space))
             {
-                // If not down on the last update, then it was just pressed
                 if (!oldState.IsKeyDown(Keys.Space))
                 {
                     return Command.exitGame;                
@@ -81,43 +96,45 @@ namespace KinectGame
             }
             else if (oldState.IsKeyDown(Keys.Space))
             {
-                // Key was down last update, but not down now, so
-                // it has just been released.
             }
 
             Keys[] key = new Keys[8];
-
             key = newState.GetPressedKeys();
 
             if (key.Length != 0)
             {
-                if (key[0].Equals(Keys.B))
+                if (key[0].Equals(Keys.NumPad0))
                 {
-                    // listens to other keys etc
+                    return Command.toLevel0;
                 }
+                else if (key[0].Equals(Keys.NumPad1))
+                {
+                    return Command.toLevel1;
+                }
+                else if (key[0].Equals(Keys.NumPad2))
+                {
+                    return Command.toLevel2;
+                }
+                else if (key[0].Equals(Keys.NumPad3))
+                {
+                    return Command.toLevel3;
+                }
+                else if (key[0].Equals(Keys.NumPad4))
+                {
+                    return Command.toLevel4;
+                }
+                else if (key[0].Equals(Keys.NumPad5))
+                {
+                    return Command.toLevel5;
+                }
+                else if (key[0].Equals(Keys.NumPad6))
+                {
+                    return Command.toProfilePage;
+                }
+                else { }
             }
-
-            // Update saved state.
             oldState = newState;
             return Command.none;
-        }
-    }
-
-    public class ButtonsInfo : Microsoft.Xna.Framework.Game
-    {
-        int level;
-        int x;
-        int y;
-        int width;
-        int height;
-
-        public ButtonsInfo(int level, int x, int y, int width, int height)
-        {
-            this.level = level;
-            this.x = x;
-            this.y = y;
-            this.width = width;
-            this.height = height;
         }
     }
 }
